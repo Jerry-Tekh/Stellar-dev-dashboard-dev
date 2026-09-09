@@ -403,31 +403,31 @@ export function evaluatePredicate(
 export function astToClaimPredicate(node: PredicateNode): StellarSdk.xdr.ClaimPredicate {
   switch (node.type) {
     case 'unconditional':
-      return StellarSdk.ClaimPredicate.unconditional();
+      return StellarSdk.Claimant.predicateUnconditional();
 
     case 'absBefore':
-      return StellarSdk.ClaimPredicate.beforeAbsoluteTime(String(node.epochSeconds));
+      return StellarSdk.Claimant.predicateBeforeAbsoluteTime(String(node.epochSeconds));
 
     case 'relBefore':
-      return StellarSdk.ClaimPredicate.beforeRelativeTime(String(node.durationSeconds));
+      return StellarSdk.Claimant.predicateBeforeRelativeTime(String(node.durationSeconds));
 
     case 'not':
-      return StellarSdk.ClaimPredicate.not(astToClaimPredicate(node.inner));
+      return StellarSdk.Claimant.predicateNot(astToClaimPredicate(node.inner));
 
     case 'and':
-      return StellarSdk.ClaimPredicate.and(
+      return StellarSdk.Claimant.predicateAnd(
         astToClaimPredicate(node.left),
         astToClaimPredicate(node.right)
       );
 
     case 'or':
-      return StellarSdk.ClaimPredicate.or(
+      return StellarSdk.Claimant.predicateOr(
         astToClaimPredicate(node.left),
         astToClaimPredicate(node.right)
       );
 
     default:
-      return StellarSdk.ClaimPredicate.unconditional();
+      return StellarSdk.Claimant.predicateUnconditional();
   }
 }
 
