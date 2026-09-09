@@ -3,8 +3,8 @@ import { estimateTransactionReserves } from '../reserveEstimator';
 import type { SponsoredOperationEntry } from '../../../types/feeBumpSponsorship';
 
 describe('Reserve Estimator', () => {
-  const source = 'GBZXN7PIRZGNMHGA72STUFTOPTQOMBVGLBGQ4G2KYG4XCEBQU7YMGSO2';
-  const sponsor = 'GAHK7EEG2WWHVKDNT4CEQFZGKF2LGDSW2IVM4S5DP42RBW3K6BTODBBI';
+  const source = 'GANIOWIIIQ4XECWLM3BOLMDX7UWAEKKPRHAMOAOJPZ3CFGBXUQFRGMXA';
+  const sponsor = 'GCB6LGWDIPB53EGK2BRA43I6VXUYT2A4KZODT7FGFM2FUGO2BAUHLWCN';
 
   it('computes reserves for unsponsored operations', () => {
     const ops: SponsoredOperationEntry[] = [

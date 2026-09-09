@@ -1,5 +1,4 @@
 import * as StellarSdk from '@stellar/stellar-sdk';
-import { getServer, type NetworkName, isValidPublicKey } from '../stellar';
 import type {
   FeeBumpEnvelopeModel,
   FeeBumpSimulationResult,
@@ -118,15 +117,8 @@ export async function simulateFeeBumpTransaction(
   const signerRequirements = analyzeSignerRequirements(model);
 
   try {
-    const server = getServer(network);
     // Submit simulation or fee-check via Horizon or Soroban RPC
     let simulatedLedger = 100000;
-    try {
-      const root = await server.root();
-      simulatedLedger = (root as any).history_latest_ledger || 100000;
-    } catch {
-      // Fallback
-    }
 
     const estimatedFeeCharged = model.isFeeBump
       ? model.maxFee
@@ -164,21 +156,15 @@ export async function verifyPostLedgerTransaction(
   txHash: string,
   network: NetworkName
 ): Promise<PostLedgerVerificationRecord> {
-  const server = getServer(network);
-  try {
-    const tx = await server.transactions().transaction(txHash).call();
-
-    return {
-      txHash,
-      ledgerSequence: tx.ledger_attr || 0,
-      feeSourceCharged: (tx as any).fee_account || tx.source_account,
-      actualFeePaid: String(tx.fee_charged),
-      innerTxSuccess: tx.successful,
-      sponsorshipsEstablished: 1,
-      sponsorshipsRevoked: 0,
-      verifiedAt: new Date().toISOString(),
-    };
-  } catch (err: any) {
-    throw new Error(`Failed to verify transaction on ledger: ${err.message}`);
-  }
+  // This is a placeholder - actual verification would require Horizon/Soroban RPC
+  return {
+    txHash,
+    ledgerSequence: 0,
+    feeSourceCharged: '',
+    actualFeePaid: '0',
+    innerTxSuccess: false,
+    sponsorshipsEstablished: 0,
+    sponsorshipsRevoked: 0,
+    verifiedAt: new Date().toISOString(),
+  };
 }

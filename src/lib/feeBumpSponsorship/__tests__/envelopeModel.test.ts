@@ -8,8 +8,8 @@ import {
 import type { FeeBumpEnvelopeModel } from '../../../types/feeBumpSponsorship';
 
 describe('Fee-Bump Envelope Model', () => {
-  const validSource = 'GBZXN7PIRZGNMHGA72STUFTOPTQOMBVGLBGQ4G2KYG4XCEBQU7YMGSO2';
-  const validFeeSource = 'GAHK7EEG2WWHVKDNT4CEQFZGKF2LGDSW2IVM4S5DP42RBW3K6BTODBBI';
+  const validSource = 'GANIOWIIIQ4XECWLM3BOLMDX7UWAEKKPRHAMOAOJPZ3CFGBXUQFRGMXA';
+  const validFeeSource = 'GCB6LGWDIPB53EGK2BRA43I6VXUYT2A4KZODT7FGFM2FUGO2BAUHLWCN';
 
   const validModel: FeeBumpEnvelopeModel = {
     isFeeBump: true,

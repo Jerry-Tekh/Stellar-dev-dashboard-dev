@@ -6,7 +6,7 @@ import FeeBumpSponsorshipDashboard from '../FeeBumpSponsorshipDashboard';
 // Mock store
 vi.mock('../../../lib/store', () => ({
   useStore: () => ({
-    connectedAddress: 'GBZXN7PIRZGNMHGA72STUFTOPTQOMBVGLBGQ4G2KYG4XCEBQU7YMGSO2',
+    connectedAddress: 'GANIOWIIIQ4XECWLM3BOLMDX7UWAEKKPRHAMOAOJPZ3CFGBXUQFRGMXA',
     network: 'testnet',
   }),
 }));

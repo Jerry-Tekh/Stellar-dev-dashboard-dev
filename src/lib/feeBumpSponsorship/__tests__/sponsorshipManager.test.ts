@@ -7,8 +7,8 @@ import {
 import type { SponsoredOperationEntry } from '../../../types/feeBumpSponsorship';
 
 describe('Sponsorship Manager', () => {
-  const sponsor = 'GBZXN7PIRZGNMHGA72STUFTOPTQOMBVGLBGQ4G2KYG4XCEBQU7YMGSO2';
-  const sponsored = 'GAHK7EEG2WWHVKDNT4CEQFZGKF2LGDSW2IVM4S5DP42RBW3K6BTODBBI';
+  const sponsor = 'GANIOWIIIQ4XECWLM3BOLMDX7UWAEKKPRHAMOAOJPZ3CFGBXUQFRGMXA';
+  const sponsored = 'GCB6LGWDIPB53EGK2BRA43I6VXUYT2A4KZODT7FGFM2FUGO2BAUHLWCN';
 
   it('correctly analyzes balanced sponsorship boundaries', () => {
     const ops: SponsoredOperationEntry[] = [
