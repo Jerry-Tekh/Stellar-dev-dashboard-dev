@@ -5,7 +5,6 @@ import type {
   InnerTransactionModel,
   SponsoredOperationEntry,
 } from '../../types/feeBumpSponsorship';
-import { astToClaimPredicate } from '../claimableBalance/predicateTree';
 
 export const BASE_OPERATION_FEE_STROOPS = 100;
 

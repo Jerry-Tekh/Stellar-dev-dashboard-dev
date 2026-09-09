@@ -88,5 +88,5 @@ app.get('/api/v1/qa/runs/:id/logs', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`QA Service running on port ${port}`);
+  console.info(`QA Service running on port ${port}`);
 });

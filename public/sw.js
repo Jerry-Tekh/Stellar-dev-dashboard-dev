@@ -108,7 +108,7 @@ self.addEventListener('fetch', (event) => {
 
 self.addEventListener('sync', (event) => {
   if (event.tag === 'sync-offline-queue') {
-    console.log('Background sync triggered: sync-offline-queue');
+    console.info('Background sync triggered: sync-offline-queue');
     // In a real app, you'd call a function here to flush the IndexedDB queue
     // but since the SW doesn't have easy access to the same JS modules as the
     // client, we often rely on the client to flush when it wakes up, or
@@ -318,7 +318,7 @@ self.addEventListener('push', (event) => {
   if (event.data) {
     try {
       data = event.data.json();
-    } catch (e) {
+    } catch {
       data.body = event.data.text();
     }
   }

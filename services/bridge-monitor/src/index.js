@@ -119,5 +119,5 @@ app.use((_req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`Bridge monitor service listening on http://localhost:${PORT}`)
+  console.info(`Bridge monitor service listening on http://localhost:${PORT}`)
 })

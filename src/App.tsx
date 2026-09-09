@@ -18,14 +18,14 @@ import { AccessibilityProvider } from './context/AccessibilityContext';
 
 
 import {
-  isValidPublicKey,
-  fetchAccount,
-  fetchTransactions,
-  fetchOperations,
-  resolveAddress,
+  isValidPublicKey as _isValidPublicKey,
+  fetchAccount as _fetchAccount,
+  fetchTransactions as _fetchTransactions,
+  fetchOperations as _fetchOperations,
+  resolveAddress as _resolveAddress,
 } from './lib/stellar'
-import { stellarCacheManager } from './lib/cacheManager'
-import { getOnlineStatus } from './utils/offline'
+import { stellarCacheManager as _stellarCacheManager } from './lib/cacheManager'
+import { getOnlineStatus as _getOnlineStatus } from './utils/offline'
 import Sidebar from './components/layout/Sidebar'
 import MobileHeader from './components/layout/MobileHeader'
 import MobileSidebar from './components/layout/MobileSidebar'
